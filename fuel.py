@@ -150,8 +150,8 @@ if __name__ == "__main__":
         schedule_time = f"{hour}:30"
     else:
         print("second half of hour")
-        print(f" next check time is {current_time + timedelta(hours=1)}")
-        schedule_time = f"{current_time + timedelta(hours=1)}"
+        print(f" next check time is {(current_time + timedelta(hours=1)).strftime("%H")}:00")
+        schedule_time = f"{(current_time + timedelta(hours=1)).strftime("%H")}:00"
 
     while True:
         # Get the current time in HH:MM format
