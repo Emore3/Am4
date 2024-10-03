@@ -1,0 +1,7 @@
+pipfile
+pipfile.lock
+scraper.py
+send.py
+.vscode/*
+
+
