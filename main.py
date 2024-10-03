@@ -27,7 +27,7 @@ def buyCO2(amount):
         'method' : 'GET',
         'path': f'airlinemanager.com/co2.php?mode=do&amount={amount}&fbSig=false&_=1721640080690',
         'scheme': 'https',
-        'Cookie': f'device=app; deviceType=android; PHPSESSID={session.cookies.get('PHPSESSID')}',
+        'Cookie': f'device=app; deviceType=android; PHPSESSID={session.cookies.get("PHPSESSID")}',
         'Priority': 'u=1, i',
         'Referer': 'https://airlinemanager.com/?gameType=app&device=android&version=11&uid=vfeHTHBdgUIueO4rXpB0ANk4YHytTBLmcMwj%2BsYSewY%3D%0A%3AYmFycWtkNTcxMzQyMTUyNQ%3D%3D%0A&uid_token=8b3d0d4573072d3e07194d8b9ecf2929&android_account=vfeHTHBdgUIueO4rXpB0ANk4YHytTBLmcMwj%2BsYSewY%3D%0A%3AYmFycWtkNTcxMzQyMTUyNQ%3D%3D%0A&mail_token=8b3d0d4573072d3e07194d8b9ecf2929&FCM=eMC2qjqmQTeCVVxyXNrmZf:APA91bFWtIiYTxoPNpnltaMuysPBZopA6bu5reZVxbwnZ-8IffUmL29MLNtmr6kZcHW1xyVZiy8CtKDcgFW4NQtR6q2gnmUqnerjow2xpG5SHX3t-Tdvkb7lnmttI8jGDbdvdE8tfNGn',
     }
@@ -48,7 +48,7 @@ def getCO2price():
         'method' : 'GET',
         'path': 'https://airlinemanager.com/co2.php?undefined&fbSig=false&_=1723184368664',
         'scheme': 'https',
-        'Cookie': f'device=app; deviceType=android; PHPSESSID={session.cookies.get('PHPSESSID')}',
+        'Cookie': f'device=app; deviceType=android; PHPSESSID={session.cookies.get("PHPSESSID")}',
         'Priority': 'u=1, i',
         'Referer': 'https://airlinemanager.com/?gameType=app&device=android&version=11&uid=vfeHTHBdgUIueO4rXpB0ANk4YHytTBLmcMwj%2BsYSewY%3D%0A%3AYmFycWtkNTcxMzQyMTUyNQ%3D%3D%0A&uid_token=8b3d0d4573072d3e07194d8b9ecf2929&android_account=vfeHTHBdgUIueO4rXpB0ANk4YHytTBLmcMwj%2BsYSewY%3D%0A%3AYmFycWtkNTcxMzQyMTUyNQ%3D%3D%0A&mail_token=8b3d0d4573072d3e07194d8b9ecf2929&FCM=eMC2qjqmQTeCVVxyXNrmZf:APA91bFWtIiYTxoPNpnltaMuysPBZopA6bu5reZVxbwnZ-8IffUmL29MLNtmr6kZcHW1xyVZiy8CtKDcgFW4NQtR6q2gnmUqnerjow2xpG5SHX3t-Tdvkb7lnmttI8jGDbdvdE8tfNGn',
     }
@@ -80,7 +80,7 @@ def buyfuel(amount):
         'method' : 'GET',
         'path': f'airlinemanager.com/fuel.php?mode=do&amount={amount}&fbSig=false&_=1721640080690',
         'scheme': 'https',
-        'Cookie': f'device=app; deviceType=android; PHPSESSID={session.cookies.get('PHPSESSID')}',
+        'Cookie': f'device=app; deviceType=android; PHPSESSID={session.cookies.get("PHPSESSID")}',
         'Priority': 'u=1, i',
         'Referer': 'https://airlinemanager.com/?gameType=app&device=android&version=11&uid=vfeHTHBdgUIueO4rXpB0ANk4YHytTBLmcMwj%2BsYSewY%3D%0A%3AYmFycWtkNTcxMzQyMTUyNQ%3D%3D%0A&uid_token=8b3d0d4573072d3e07194d8b9ecf2929&android_account=vfeHTHBdgUIueO4rXpB0ANk4YHytTBLmcMwj%2BsYSewY%3D%0A%3AYmFycWtkNTcxMzQyMTUyNQ%3D%3D%0A&mail_token=8b3d0d4573072d3e07194d8b9ecf2929&FCM=eMC2qjqmQTeCVVxyXNrmZf:APA91bFWtIiYTxoPNpnltaMuysPBZopA6bu5reZVxbwnZ-8IffUmL29MLNtmr6kZcHW1xyVZiy8CtKDcgFW4NQtR6q2gnmUqnerjow2xpG5SHX3t-Tdvkb7lnmttI8jGDbdvdE8tfNGn',
     }
@@ -101,7 +101,7 @@ def getfuelprice():
         'method' : 'GET',
         'path': 'https://airlinemanager.com/fuel.php?undefined&fbSig=false&_=17229400',
         'scheme': 'https',
-        'Cookie': f'device=app; deviceType=android; PHPSESSID={session.cookies.get('PHPSESSID')}',
+        'Cookie': f'device=app; deviceType=android; PHPSESSID={session.cookies.get("PHPSESSID")}',
         'Priority': 'u=1, i',
         'Referer': 'https://airlinemanager.com/?gameType=app&device=android&version=11&uid=vfeHTHBdgUIueO4rXpB0ANk4YHytTBLmcMwj%2BsYSewY%3D%0A%3AYmFycWtkNTcxMzQyMTUyNQ%3D%3D%0A&uid_token=8b3d0d4573072d3e07194d8b9ecf2929&android_account=vfeHTHBdgUIueO4rXpB0ANk4YHytTBLmcMwj%2BsYSewY%3D%0A%3AYmFycWtkNTcxMzQyMTUyNQ%3D%3D%0A&mail_token=8b3d0d4573072d3e07194d8b9ecf2929&FCM=eMC2qjqmQTeCVVxyXNrmZf:APA91bFWtIiYTxoPNpnltaMuysPBZopA6bu5reZVxbwnZ-8IffUmL29MLNtmr6kZcHW1xyVZiy8CtKDcgFW4NQtR6q2gnmUqnerjow2xpG5SHX3t-Tdvkb7lnmttI8jGDbdvdE8tfNGn',
     }
@@ -135,7 +135,7 @@ def eco_marketing():
         'method' : 'GET',
         'path': 'https://airlinemanager.com/marketing_new.php?type=5&mode=do&c=1',
         'scheme': 'https',
-        'Cookie': f'device=app; deviceType=android; PHPSESSID={session.cookies.get('PHPSESSID')}',
+        'Cookie': f'device=app; deviceType=android; PHPSESSID={session.cookies.get("PHPSESSID")}',
         'Priority': 'u=1, i',
         'Referer': 'https://airlinemanager.com/?gameType=app&device=android&version=11&uid=vfeHTHBdgUIueO4rXpB0ANk4YHytTBLmcMwj%2BsYSewY%3D%0A%3AYmFycWtkNTcxMzQyMTUyNQ%3D%3D%0A&uid_token=8b3d0d4573072d3e07194d8b9ecf2929&android_account=vfeHTHBdgUIueO4rXpB0ANk4YHytTBLmcMwj%2BsYSewY%3D%0A%3AYmFycWtkNTcxMzQyMTUyNQ%3D%3D%0A&mail_token=8b3d0d4573072d3e07194d8b9ecf2929&FCM=eMC2qjqmQTeCVVxyXNrmZf:APA91bFWtIiYTxoPNpnltaMuysPBZopA6bu5reZVxbwnZ-8IffUmL29MLNtmr6kZcHW1xyVZiy8CtKDcgFW4NQtR6q2gnmUqnerjow2xpG5SHX3t-Tdvkb7lnmttI8jGDbdvdE8tfNGn',
     }
@@ -155,7 +155,7 @@ def rep_marketing():
         'method' : 'GET',
         'path': 'https://airlinemanager.com/marketing_new.php?type=1&c=4&mode=do&d=1',
         'scheme': 'https',
-        'Cookie': f'device=app; deviceType=android; PHPSESSID={session.cookies.get('PHPSESSID')}',
+        'Cookie': f'device=app; deviceType=android; PHPSESSID={session.cookies.get("PHPSESSID")}',
         'Priority': 'u=1, i',
         'Referer': 'https://airlinemanager.com/?gameType=app&device=android&version=11&uid=vfeHTHBdgUIueO4rXpB0ANk4YHytTBLmcMwj%2BsYSewY%3D%0A%3AYmFycWtkNTcxMzQyMTUyNQ%3D%3D%0A&uid_token=8b3d0d4573072d3e07194d8b9ecf2929&android_account=vfeHTHBdgUIueO4rXpB0ANk4YHytTBLmcMwj%2BsYSewY%3D%0A%3AYmFycWtkNTcxMzQyMTUyNQ%3D%3D%0A&mail_token=8b3d0d4573072d3e07194d8b9ecf2929&FCM=eMC2qjqmQTeCVVxyXNrmZf:APA91bFWtIiYTxoPNpnltaMuysPBZopA6bu5reZVxbwnZ-8IffUmL29MLNtmr6kZcHW1xyVZiy8CtKDcgFW4NQtR6q2gnmUqnerjow2xpG5SHX3t-Tdvkb7lnmttI8jGDbdvdE8tfNGn',
     }
@@ -175,7 +175,7 @@ def depart_all():
         'method' : 'GET',
         'path': 'https://airlinemanager.com/route_depart.php?mode=all&ids=x',
         'scheme': 'https',
-        'Cookie': f'device=app; deviceType=android; PHPSESSID={session.cookies.get('PHPSESSID')}',
+        'Cookie': f'device=app; deviceType=android; PHPSESSID={session.cookies.get("PHPSESSID")}',
         'Priority': 'u=1, i',
         'Referer': 'https://airlinemanager.com/?gameType=app&device=android&version=11&uid=vfeHTHBdgUIueO4rXpB0ANk4YHytTBLmcMwj%2BsYSewY%3D%0A%3AYmFycWtkNTcxMzQyMTUyNQ%3D%3D%0A&uid_token=8b3d0d4573072d3e07194d8b9ecf2929&android_account=vfeHTHBdgUIueO4rXpB0ANk4YHytTBLmcMwj%2BsYSewY%3D%0A%3AYmFycWtkNTcxMzQyMTUyNQ%3D%3D%0A&mail_token=8b3d0d4573072d3e07194d8b9ecf2929&FCM=eMC2qjqmQTeCVVxyXNrmZf:APA91bFWtIiYTxoPNpnltaMuysPBZopA6bu5reZVxbwnZ-8IffUmL29MLNtmr6kZcHW1xyVZiy8CtKDcgFW4NQtR6q2gnmUqnerjow2xpG5SHX3t-Tdvkb7lnmttI8jGDbdvdE8tfNGn',
     }
