@@ -3,6 +3,7 @@ import requests
 import schedule
 import time
 from bs4 import BeautifulSoup
+from fuel import getCO2price, getfuelprice
 
 
 def contact():
@@ -18,6 +19,7 @@ def contact():
 
 
 def buyCO2(amount):
+    contact()
     url = f"https://airlinemanager.com/co2.php?mode=do&amount={amount}&fbSig=false&_=1721640080690"
     
     headers = {
@@ -38,6 +40,7 @@ def buyCO2(amount):
         print(f"{response.status_code} : Error Occurred ")
 
 def getCO2price():
+    contact()
     url = "https://airlinemanager.com/co2.php?undefined&fbSig=false&_=1723184368664"
     
     headers = {
@@ -56,13 +59,13 @@ def getCO2price():
         soup = BeautifulSoup(response.content, "html.parser")
         prices = soup.find_all("span", class_="text-danger")
         for price in prices:
-            print(f"Price : {price.text[2:]}")
             co2_price_data = int(price.text[2:].replace(",", ""))
+            print(f"Price : {price.text[2:]}")
 
         tanks = soup.find_all("span", id ="remCapacity")
         for tank in tanks:
-            print(f"Tank : {tank.text}")
             tank_capacity_data = int(tank.text.replace(",", ""))
+            print(f"Tank : {tank.text}")
 
         if (co2_price_data <= 200) and (tank_capacity_data > 0) :
             buyCO2(tank_capacity_data)
@@ -90,6 +93,7 @@ def buyfuel(amount):
         print(f"{response.status_code} : Error Occurred ")
     
 def getfuelprice():
+    contact()
     url = "https://airlinemanager.com/fuel.php?undefined&fbSig=false&_=17229400"
     
     headers = {
@@ -108,13 +112,13 @@ def getfuelprice():
         soup = BeautifulSoup(response.content, "html.parser")
         prices = soup.find_all("span", class_="text-danger")
         for price in prices:
-            print(f"Price : {price.text[2:]}")
             fuel_price_data = int(price.text[2:].replace(",", ""))
+            print(f"Price : {fuel_price_data}")
 
         tanks = soup.find_all("span", id ="remCapacity")
         for tank in tanks:
-            print(f"Tank : {tank.text}")
             tank_capacity_data = int(tank.text.replace(",", ""))
+            print(f"Tank : {tank_capacity_data}")
 
         if (fuel_price_data <= 500) and (tank_capacity_data > 0) :
             buyfuel(tank_capacity_data)
@@ -181,7 +185,7 @@ def depart_all():
     if response.status_code == 200:
         soup = BeautifulSoup(response.text, 'html.parser')
         soup.find_all()
-        print(soup)
+        print("route departed")
         # print("------------------++++++++++-----------")
         # print(response.text)
     else:
@@ -205,7 +209,12 @@ def morning_departure():
     # the problem is that the api call only departs 20 flights at once 
     depart_all()
     time.sleep(10)
-
+    depart_all()
+    time.sleep(10)
+    depart_all() 
+    time.sleep(2)
+    getCO2price()
+    time.sleep(10)
     depart_all()
 
 
@@ -224,6 +233,12 @@ def evening_departure():
     depart_all()
     time.sleep(10)
     depart_all()  
+    time.sleep(10)
+    depart_all() 
+    time.sleep(2)
+    getCO2price()
+    time.sleep(10)
+    depart_all() 
 
 # Schedule the request to run at a specific time every day
 schedule_time_1 = "09:00"  # 24-hour format, adjust as needed

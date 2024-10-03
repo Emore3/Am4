@@ -2,7 +2,7 @@ import re
 import requests
 import schedule
 import time
-from datetime import datetime
+from datetime import datetime, timedelta
 from bs4 import BeautifulSoup
 
 
@@ -56,13 +56,13 @@ def getCO2price():
         soup = BeautifulSoup(response.content, "html.parser")
         prices = soup.find_all("span", class_="text-danger")
         for price in prices:
-            print(f"Price : {price.text[2:]}")
             co2_price_data = int(price.text[2:].replace(",", ""))
+            print(f"Price : {co2_price_data}")
 
         tanks = soup.find_all("span", id ="remCapacity")
         for tank in tanks:
-            print(f"Tank : {tank.text}")
             tank_capacity_data = int(tank.text.replace(",", ""))
+            print(f"Tank : {tank_capacity_data}")
 
         if (co2_price_data <= 200) and (tank_capacity_data > 0) :
             buyCO2(tank_capacity_data)
@@ -108,13 +108,13 @@ def getfuelprice():
         soup = BeautifulSoup(response.content, "html.parser")
         prices = soup.find_all("span", class_="text-danger")
         for price in prices:
-            print(f"Price : {price.text[2:]}")
             fuel_price_data = int(price.text[2:].replace(",", ""))
+            print(f"Price : {fuel_price_data}")
 
         tanks = soup.find_all("span", id ="remCapacity")
         for tank in tanks:
-            print(f"Tank : {tank.text}")
             tank_capacity_data = int(tank.text.replace(",", ""))
+            print(f"Tank : {tank_capacity_data}")
 
         if (fuel_price_data <= 500) and (tank_capacity_data > 0) :
             buyfuel(tank_capacity_data)
@@ -130,26 +130,32 @@ def action():
     getCO2price()
 
 def schdl():
-    schedule.every(30).minutes.do(action)\
+    action()
+    schedule.every(30).minutes.do(action)
+    print("Fuel check action has been scheduled...")
     
 
 if __name__ == "__main__":
 
-    minute = int(datetime.now().strftime("%M"))
-    hour = int(datetime.now().strftime("%H"))
+    current_time = datetime.now()
+    minute = datetime.now().strftime("%M")
+    minute_int = int(datetime.now().strftime("%M"))
+    hour = datetime.now().strftime("%H")
+    hour_int = int(datetime.now().strftime("%H"))
 
-    if minute < 30:
+    
+    if minute_int < 30:
         print("First half of the hour")
         print(f" next check time is {hour}:30")
         schedule_time = f"{hour}:30"
     else:
         print("second half of hour")
-        print(f" next check time is {hour+1}:00")
-        schedule_time = f"{hour+1}:00"
+        print(f" next check time is {current_time + timedelta(hours=1)}")
+        schedule_time = f"{current_time + timedelta(hours=1)}"
 
     while True:
         # Get the current time in HH:MM format
-        current_time = int(datetime.now().strftime("%H:%M"))
+        current_time = datetime.now().strftime("%H:%M")
         
         if current_time == schedule_time:
             schdl()
