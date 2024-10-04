@@ -1,6 +1,6 @@
 import re
 import requests
-import schedule
+# import schedule
 import time
 from bs4 import BeautifulSoup
 from fuel import getCO2price, getfuelprice
@@ -240,16 +240,16 @@ def evening_departure():
     time.sleep(10)
     depart_all() 
 
-# Schedule the request to run at a specific time every day
-schedule_time_1 = "09:00"  # 24-hour format, adjust as needed
-schedule_time_2 = "19:00"  # 24-hour format, adjust as needed
-schedule.every().day.at(schedule_time_1).do(morning_departure)
-schedule.every().day.at(schedule_time_2).do(evening_departure)
+# # Schedule the request to run at a specific time every day
+# schedule_time_1 = "09:00"  # 24-hour format, adjust as needed
+# schedule_time_2 = "19:00"  # 24-hour format, adjust as needed
+# schedule.every().day.at(schedule_time_1).do(morning_departure)
+# schedule.every().day.at(schedule_time_2).do(evening_departure)
 
-print(f"Scheduled request at {schedule_time_1} and {schedule_time_2} every day.")
+# print(f"Scheduled request at {schedule_time_1} and {schedule_time_2} every day.")
 
-print("Server is running....")
+# print("Server is running....")
 
-while True:
-    schedule.run_pending()
-    time.sleep(1)
+# while True:
+#     schedule.run_pending()
+#     time.sleep(1)

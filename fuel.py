@@ -1,8 +1,8 @@
 import re
 import requests
-import schedule
+# import schedule
 import time
-from datetime import datetime, timedelta
+# from datetime import datetime, timedelta
 from bs4 import BeautifulSoup
 
 
@@ -129,40 +129,41 @@ def action():
     time.sleep(5)
     getCO2price()
 
-def schdl():
-    action()
-    schedule.every(30).minutes.do(action)
-    print("Fuel check action has been scheduled...")
+# def schdl():
+#     action()
+#     schedule.every(30).minutes.do(action)
+#     print("Fuel check action has been scheduled...")
     
 
 if __name__ == "__main__":
+    print("script called internally")
 
-    current_time = datetime.now()
-    minute = datetime.now().strftime("%M")
-    minute_int = int(datetime.now().strftime("%M"))
-    hour = datetime.now().strftime("%H")
-    hour_int = int(datetime.now().strftime("%H"))
+    # current_time = datetime.now()
+    # minute = datetime.now().strftime("%M")
+    # minute_int = int(datetime.now().strftime("%M"))
+    # hour = datetime.now().strftime("%H")
+    # hour_int = int(datetime.now().strftime("%H"))
 
     
-    if minute_int < 30:
-        print("First half of the hour")
-        print(f" next check time is {hour}:30")
-        schedule_time = f"{hour}:30"
-    else:
-        print("second half of hour")
-        print(f' next check time is {(current_time + timedelta(hours=1)).strftime("%H")}:00')
-        schedule_time = f'{(current_time + timedelta(hours=1)).strftime("%H")}:00'
+    # if minute_int < 30:
+    #     print("First half of the hour")
+    #     print(f" next check time is {hour}:30")
+    #     schedule_time = f"{hour}:30"
+    # else:
+    #     print("second half of hour")
+    #     print(f' next check time is {(current_time + timedelta(hours=1)).strftime("%H")}:00')
+    #     schedule_time = f'{(current_time + timedelta(hours=1)).strftime("%H")}:00'
 
-    while True:
-        # Get the current time in HH:MM format
-        current_time = datetime.now().strftime("%H:%M")
+    # while True:
+    #     # Get the current time in HH:MM format
+    #     current_time = datetime.now().strftime("%H:%M")
         
-        if current_time == schedule_time:
-            schdl()
-            break  # Exit the loop after the job is done
+    #     if current_time == schedule_time:
+    #         schdl()
+    #         break  # Exit the loop after the job is done
         
-        time.sleep(1)  # Sleep for a second before checking the time again
+    #     time.sleep(1)  # Sleep for a second before checking the time again
 
-    while True:
-        schedule.run_pending()
-        time.sleep(1)
+    # while True:
+    #     schedule.run_pending()
+    #     time.sleep(1)
